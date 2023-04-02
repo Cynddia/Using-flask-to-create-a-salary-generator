@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Salary Predictor</title>
+</head>
+<body>
+	<h1>Enter Experience, Test Score, and Interview Score to Predict Salary</h1>
+	<form method="POST" action="{{ url_for('predict') }}">
+		<label for="exp">Experience:</label>
+		<input type="number" id="exp" name="exp" placeholder="Enter your experience"><br><br>
+		<label for="test">Test Score:</label>
+		<input type="number" id="test" name="test" placeholder="Enter your test score"><br><br>
+		<label for="interview">Interview Score:</label>
+		<input type="number" id="interview" name="interview" placeholder="Enter your interview score"><br><br>
+		<input type="submit" value="Predict Salary">
+	</form>
+	{% if prediction_text %}
+	<p>{{ prediction_text }}</p>
+	{% endif %}
+</body>
+</html>
